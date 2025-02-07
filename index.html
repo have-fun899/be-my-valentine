@@ -71,13 +71,17 @@
         noBtn.addEventListener('click', moveButton);
 
         function moveButton() {
-        const containerWidth = document.querySelector('.container').offsetWidth;
-        const containerHeight = document.querySelector('.container').offsetHeight;
+        const containerWidth = document.querySelector('.valentineBox').offsetWidth;
+        const containerHeight = document.querySelector('.valentineBox').offsetHeight;
+        const btnWidth = noBtn.offsetWidth;
+        const btnHeight = noBtn.offsetHeight;
+            
 
-        const randomX = Math.floor(Math.random() * (containerWidth - noBtn.offsetWidth));
-        const randomY = Math.floor(Math.random() * (containerHeight - noBtn.offsetHeight));
+        const randomX = Math.floor(Math.random() * (containerWidth - btnWidth + 40));
+        const randomY = Math.floor(Math.random() * (containerHeight - btnHeight + 40));
 
         noBtn.style.position = 'absolute';
+        noBtn.style.transition = 'left 0.5s, top 0.5s';
         noBtn.style.left = `${randomX}px`;
         noBtn.style.top = `${randomY}px`;
         }
