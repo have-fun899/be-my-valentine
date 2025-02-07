@@ -43,7 +43,7 @@ a:focus, a:visited, a:active {
         box-shadow: 1px 12px 29px rgba(255, 237, 238, 0.1);
         list-style: none;
         border-radius: 18px;
-        background: rgba(255, 244, 244, 0.747);
+        background: rgba(255, 239, 239, 0.61);
         padding: 3em 3em 6em ;
         opacity: 1;
         transition: opacity .2s ease-in-out ;
@@ -70,7 +70,7 @@ a:focus, a:visited, a:active {
         box-shadow: 1px 12px 29px rgba(255, 237, 238, 0.1);
         list-style: none;
         border-radius: 18px;
-        background: rgba(255, 244, 244, 0.747);
+        background: rgba(255, 239, 239, 0.61);
         padding: 3em 3em 6em ; 
         opacity: 0;
         pointer-events: none;
@@ -99,7 +99,7 @@ a:focus, a:visited, a:active {
         box-shadow: 1px 12px 29px rgba(255, 237, 238, 0.1);
         list-style: none;
         border-radius: 18px;
-        background: rgba(255, 244, 244, 0.747);
+        background: rgba(255, 239, 239, 0.61);
         padding: 3em 3em 6em ; 
         opacity: 0;
         pointer-events: none;
@@ -139,6 +139,43 @@ a:focus, a:visited, a:active {
 }
 }
 
+@keyframes shake {
+    0% {
+        transform: scale(1.01);
+       
+    }
+    50% {
+        transform: scale(1.05);
+
+    }
+    75% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+
+@keyframes subshake {
+    0% {
+        transform: scale(1.01);
+       
+    }
+    50% {
+        transform: scale(1.03);
+
+    }
+    75% {
+        transform: scale(1.06);
+    }
+    100% {
+        transform: scale(1.03);
+    }
+}
+
+
+
 h2 {
     font-family: 'Poppins';
     text-align: center;
@@ -169,6 +206,7 @@ h2 {
     color: white;
     border-radius: 100px;
     transition: .3s transform;
+    animation: subshake 1.7s infinite;
 
 }
 .submit-btn:hover {
@@ -192,6 +230,7 @@ h2 {
     color: white;
     border-radius: 100px;
     transition: .3s transform;
+    animation: shake 1s infinite;
   }
   
 #noBtn {
