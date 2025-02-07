@@ -43,7 +43,6 @@ a:focus, a:visited, a:active {
         box-shadow: 1px 12px 29px rgba(255, 237, 238, 0.1);
         list-style: none;
         border-radius: 18px;
-        backdrop-filter: blur(.1em);
         background: rgba(255, 244, 244, 0.747);
         padding: 3em 3em 6em ;
         opacity: 1;
@@ -71,7 +70,6 @@ a:focus, a:visited, a:active {
         box-shadow: 1px 12px 29px rgba(255, 237, 238, 0.1);
         list-style: none;
         border-radius: 18px;
-        backdrop-filter: blur(.1em);
         background: rgba(255, 244, 244, 0.747);
         padding: 3em 3em 6em ; 
         opacity: 0;
@@ -101,7 +99,6 @@ a:focus, a:visited, a:active {
         box-shadow: 1px 12px 29px rgba(255, 237, 238, 0.1);
         list-style: none;
         border-radius: 18px;
-        backdrop-filter: blur(.1em);
         background: rgba(255, 244, 244, 0.747);
         padding: 3em 3em 6em ; 
         opacity: 0;
