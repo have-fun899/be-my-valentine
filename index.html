@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Valentine?</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="wrap">
+        <div class="container">
+            <div class="box">
+                    <div class="nameBox">
+                        <img src="./Red-Teddy-Bear-Transparent-PNG.png">
+                        <h2 class="name">Wow, <br /> I knew you'd click! <img src="./love.png" style="width: 16px;"></h2>
+                        <input type="text" class="enter-name" id="name-input" placeholder="Please write your name here...">
+                        <button class="submit-btn" onclick="displayName()">Submit</button>
+                        <div class="error-message" style="display: none; color: rgb(226, 45, 45); text-align: center; margin-top: .6em; font-weight:600; width: 95%;"></div>
+                    </div>
+                    <div class="valentineBox">
+                        <img src="./Val-love.png" width="100%">
+                        <div class="display-name" style="display: none; margin-top: 1em;"></div>
+                        <div class="buttons">
+                            <button id="yesBtn">Yes</button>
+                            <button id="noBtn">No</button>
+                        </div>
+                    </div>
+                    <div class="messageBox">
+                        <img src="./hug.png" width="100%">
+
+                        <p id="response"></p>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        const submitBtn = document.querySelector('.submit-btn'); // Use querySelector for classes
+        const nameBox = document.querySelector('.nameBox');
+        const valentineBox = document.querySelector('.valentineBox');
+        const messageBox = document.querySelector('.messageBox');
+
+       
+
+        function displayName() {
+            var name = document.getElementById("name-input").value.trim();
+            var errorMessage = document.querySelector(".error-message");
+            var displayName = document.querySelector(".display-name");
+
+    
+            if (name === "") {
+                errorMessage.innerHTML = "lol, so you don't want to write your name?";
+                errorMessage.style.display = "block";
+                displayName.style.display = "none";
+            } else {
+                
+                     
+               
+                displayName.innerHTML = `i made this special for you <span> ${name} </span>, Will you be my Valentine? `;
+                displayName.style.display = "block";
+                errorMessage.style.display = "none";
+                valentineBox.classList.add('open'); 
+                nameBox.classList.add('close'); 
+            }
+        }
+        const yesBtn = document.getElementById('yesBtn');
+        const noBtn = document.getElementById('noBtn');
+
+        noBtn.addEventListener('mouseover', moveButton);
+        noBtn.addEventListener('click', moveButton);
+
+        function moveButton() {
+        const containerWidth = document.querySelector('.container').offsetWidth;
+        const containerHeight = document.querySelector('.container').offsetHeight;
+
+        const randomX = Math.floor(Math.random() * (containerWidth - noBtn.offsetWidth));
+        const randomY = Math.floor(Math.random() * (containerHeight - noBtn.offsetHeight));
+
+        noBtn.style.position = 'absolute';
+        noBtn.style.left = `${randomX}px`;
+        noBtn.style.top = `${randomY}px`;
+        }
+
+        yesBtn.addEventListener('click', () => {
+            valentineBox.classList.remove('open'); 
+            messageBox.classList.add('show');
+            
+        response.textContent = `Awww! I can't wait to hug you like this🌹 and I'm so lucky to have you as my Valentine! I knew you'd agree tho 💖`;
+        });
+    </script>
+</body>
+</html>
+
